@@ -25,5 +25,40 @@ namespace FreelancerNamespace
             }
             return OK(Freelancers);
         }
+
+                [HttpGet("{id}")]
+        public async Task<ActionResult<Freelancer>> GetFreelancer(int id)
+        {
+            var Freelancer = await _dbContext.Freelancers.FirstAsync(id);
+            if(Freelancer == null)
+            {
+                return NotFound();
+            }
+            return OK(Freelancers);
+        }
+        [HttpPost]
+        public async Task<ActionResult> AddFreelancer(Freelancer freelancer)
+        {
+
+            if(freelancer == null)
+            {
+                return BadRequest();
+            }
+            _dbContext.Freelancers.Add(freelancer);
+            await _dbContext.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetFreelancer), new {id= freelancer.FreelancerID}, freelancer);
+        }
+        [HttpPost]
+        public async Task<ActionResult> AddFreelancer(Freelancer freelancer)
+        {
+
+            if(freelancer == null)
+            {
+                return BadRequest();
+            }
+            _dbContext.Freelancers.Add(freelancer);
+            await _dbContext.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetFreelancer), new {id= freelancer.FreelancerID}, freelancer);
+        }
     }
 }

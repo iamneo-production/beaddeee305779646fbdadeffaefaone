@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace dotnetapiapp.Models
-{
     public class Project
     {
          [key]
@@ -19,4 +17,3 @@ namespace dotnetapiapp.Models
         public int FreelancerID {get; set;}
         public Freelancer Freelancer {get; set; }
     }
-}

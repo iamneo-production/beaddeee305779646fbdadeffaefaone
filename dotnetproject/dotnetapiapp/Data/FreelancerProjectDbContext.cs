@@ -13,11 +13,11 @@ namespace dotnetapiapp.Data
         {
         }
     public DbSet<Freelancer> Freelancers {get; set;}
-        public DbSet<Project> Freelancers {get; set;}
+        public DbSet<Project> Projects {get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<FreelancerProjectDbContext>()
+            modelBuilder.Entity<Project>()
             .HasOne(p => p.Freelancer)
             .WithMany(f => f.Projects)
             .HasForeignKey( p => p.FreelancerID)

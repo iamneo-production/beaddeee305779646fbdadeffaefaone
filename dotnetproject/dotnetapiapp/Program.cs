@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Mic
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FreelancerProjectDbContext>(options => 
 {
-    options.UseSqlServer(configure.GetConnectionString("DefaultConnection"));
+    var configuration = builder.Configuration;
+    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 });
 
 var app = builder.Build();

@@ -18,5 +18,5 @@ using System.ComponentModel.DataAnnotations.Schema;
         [Required]
         public int MailID {get; set;}
         public int ContactNumber {get; set;}
-        public ICollection<Project> projects {get; set; }
+        public ICollection<Project> Projects {get; set; }
     }

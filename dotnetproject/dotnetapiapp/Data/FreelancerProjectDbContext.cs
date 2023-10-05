@@ -13,7 +13,7 @@ namespace dotnetapiapp.Data
         {
         }
     public DbSet<Freelancer> Freelancers {get; set;}
-        public DbSet<Project> Projects {get; set;}
+    public DbSet<Project> Projects {get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace dotnetapiapp.Data
             .HasOne(p => p.Freelancer)
             .WithMany(f => f.Projects)
             .HasForeignKey( p => p.FreelancerID)
-            .OnDelete(DeleteBehaviour.Restrict);
+            .OnDelete(DeleteBehavior.Restrict);
         }
 
 }

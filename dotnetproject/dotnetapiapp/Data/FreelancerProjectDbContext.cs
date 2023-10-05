@@ -12,11 +12,10 @@ namespace dotnetapiapp.Data
         : base(options)
         {
         }
-    }
     public DbSet<Freelancer> Freelancers {get; set;}
         public DbSet<Project> Freelancers {get; set;}
 
-        protected override void onModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<FreelancerProjectDbContext>()
             .HasOne(p => p.Freelancer)
@@ -25,4 +24,5 @@ namespace dotnetapiapp.Data
             .OnDelete(DeleteBehaviour.Restrict);
         }
 
+}
 }

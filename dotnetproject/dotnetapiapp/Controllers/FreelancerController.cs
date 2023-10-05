@@ -10,6 +10,7 @@ namespace FreelancerNamespace
     [ApiController]
     public class FreelancerController:ControllerBase
     {
-private readonly 
+private readonly freelancercontext _freelancercontext;
+public FreelancerController() 
     }
 }

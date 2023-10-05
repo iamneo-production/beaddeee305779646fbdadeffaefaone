@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
     public class Project
     {
-         [key]
+         [Key]
         public int ProjectID {get; set;}
         [Required]
         public int ProjectName {get; set;}

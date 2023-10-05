@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
     public class Freelancer
     {
-        [key]
+        [Key]
         public int FreelancerID {get; set;}
         [Required]
         public int FreelancerName {get; set;}
